@@ -6,19 +6,25 @@ This fix is for Jetson systems where a CH340/CH341 USB serial device appears in 
 
 ## Tested environment
 
-```text
-Board: NVIDIA Jetson Orin Nano Developer Kit
-Jetson Linux / L4T: 36.5.0
-Ubuntu: 22.04 Jammy
-Kernel: 5.15.185-tegra
-USB serial chip: QinHeng CH340 / CH341
-USB ID: 1a86:7523
-Target board: ESP32-OLIMEX-POE-ISO
-```
+| Item | Tested value |
+| --- | --- |
+| Board | NVIDIA Jetson Orin Nano Developer Kit |
+| Jetson Linux / L4T | 36.5.0 |
+| Ubuntu | 22.04 Jammy |
+| Kernel | `5.15.185-tegra` |
+| USB serial chip | QinHeng CH340 / CH341 |
+| USB ID | `1a86:7523` |
+| Target board | ESP32-OLIMEX-POE-ISO |
 
 This may also help with other CH340/CH341-based boards, including many Arduino, ESP32, ESP8266, and USB-UART adapters on Jetson Linux.
 
 ## Problem summary
+
+| Check | Problem state | Expected after fix |
+| --- | --- | --- |
+| `lsusb` | CH340/CH341 device is visible | Device remains visible |
+| `/dev/ttyUSB0` | Missing | `/dev/ttyUSB0` appears |
+| `ch341` module | `modprobe ch341` fails because the module is missing | `ch341` loads successfully |
 
 The USB device is detected:
 
