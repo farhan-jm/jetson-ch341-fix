@@ -1,0 +1,31 @@
+# Build workspaces and downloaded source archives
+l4t36_5_ch341_build/
+public_sources.tbz2
+*.partial
+*.tar
+*.tar.gz
+*.tgz
+*.tbz2
+*.xz
+
+# Kernel build outputs
+*.ko
+*.o
+*.mod
+*.mod.c
+*.cmd
+.tmp_versions/
+Module.symvers
+modules.order
+
+# Logs
+*.log
+ch341_l4t36_5_build_*.log
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
