@@ -213,6 +213,16 @@ The script performs these steps:
     sudo modprobe ch341
     ```
 
+## Alternative community method
+
+Some users have also reported success compiling only `ch341.c` from the upstream Linux v5.15 tree against the Jetson kernel headers.
+
+Reference discussion:
+
+```text
+https://forums.developer.nvidia.com/t/arduino-and-jetson-orin-nano-usb-cominicate/369484
+```
+
 ## Manual final checks
 
 Check the module:
